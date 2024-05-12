@@ -7,8 +7,6 @@ export default defineNuxtConfig({
     },
 },
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/axios',  
-    '@nuxtjs/auth'
+
 ], 
 })
