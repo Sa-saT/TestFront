@@ -1,10 +1,15 @@
-<script lang="ts" setup></script>
 <template>
-  <div>
-    <h1>Welcome to the homepage</h1>
-    <AppAlert>
-      This is an auto-imported component
-    </AppAlert>
-  </div>
+	<h1>TOP</h1>
+	<nav id="breadcrumbs">
+		<ul>
+			<li>TOP</li>
+		</ul>
+	</nav>
+	<section>
+		<p>
+			<NuxtLink v-bind:to="{name: 'member-memberList'}">
+				会員管理はこちら
+			</NuxtLink>
+		</p>
+	</section>
 </template>
-<style scoped></style>

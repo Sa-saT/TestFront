@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import type {Member} from "@/interfaces";
 // 会員情報リストをステートとして用意
 useState<Map<number, Member>>(
@@ -9,12 +9,15 @@ useState<Map<number, Member>>(
     return memberListInit;
   }
 )
-</script>
+</script> -->
 <template>
-  <dev>
-  <!-- <NuxtLayout>
-    <NuxtPage /> -->
+  <!-- <dev>
+  <NuxtLayout>
+    <NuxtPage />
     <MemberAuthList :id="1234"/>
-  <!-- </NuxtLayout> -->
-  </dev>
+  </NuxtLayout>
+  </dev> -->
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
 </template>
