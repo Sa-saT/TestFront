@@ -11,13 +11,9 @@ useState<Map<number, Member>>(
 )
 </script> -->
 <template>
-  <!-- <dev>
+  <dev>
   <NuxtLayout>
     <NuxtPage />
-    <MemberAuthList :id="1234"/>
   </NuxtLayout>
-  </dev> -->
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  </dev>
 </template>
