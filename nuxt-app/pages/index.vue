@@ -1,15 +1,7 @@
 <template>
-	<h1>TOP</h1>
-	<nav id="breadcrumbs">
-		<ul>
-			<li>TOP</li>
-		</ul>
-	</nav>
-	<section>
-		<p>
-			<NuxtLink v-bind:to="{name: 'member-memberList'}">
-				会員管理はこちら
-			</NuxtLink>
-		</p>
-	</section>
+	<div>
+		<div class="py-20 px-6 bg-teal-700 text-center">
+			<h1 class="mb-12 text-5xl text-white">Find a job anywhere</h1>
+		</div>
+	</div>
 </template>
