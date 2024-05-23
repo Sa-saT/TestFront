@@ -10,7 +10,7 @@
       </div>
     </nav>
     <slot />
-    <footer class="p-6 flex flex-warp items-center justify-between bg-gray-900">
+    <footer class="p-6 flex flex-warp items-center justify-between bg-gray-800">
       <p class="text-gray-300">Copyright (c) 2023 - Djob</p>
       <div class="flex mt-6 md:mt-0 items-center space-x-4">
         <NuxtLink to="/login" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">Log in</NuxtLink>
