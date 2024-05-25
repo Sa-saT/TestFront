@@ -1,0 +1,12 @@
+List
+
+Install Pinia
+Install tailwind
+
+Set up layout
+
+DONE Create a frontpage
+DONE Create a brouse page
+Create a detail page
+Create a log in page
+Create a sign up page
