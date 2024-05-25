@@ -6,7 +6,8 @@ Install tailwind
 Set up layout
 
 DONE Create a frontpage
+https://heroicons.com/
 DONE Create a brouse page
-Create a detail page
+DONE Create a detail page
 Create a log in page
 Create a sign up page
