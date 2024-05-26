@@ -10,18 +10,31 @@
       focus:invalid:border-pink-500 focus:invalid:ring-pink-500
     "/>
   </label>
-</form> -->
+</form>
 <table>
   <tbody>
-    {#each people as person}
+    {#each people as person} -->
       <!-- Use a white background for odd rows, and slate-50 for even rows -->
-      <tr class="odd:bg-white even:bg-slate-50">
+      <!-- <tr class="odd:bg-white even:bg-slate-50">
         <td>{person.name}</td>
         <td>{person.title}</td>
         <td>{person.email}</td>
       </tr>
     {/each}
   </tbody>
-</table>
+</table> -->
+
+<div class="py-10 px-6">
+  <div class="max-w-sm mx-auto py-10 px-6 bg-gray-100 rounded-xl">
+    <h1 class="mb-6 text-2xl">Log in</h1>
+    <form>
+      <input type="text" placeholder="Your name..." class="w-full mb-4 py-4 px-6 rounded-xl"></input>
+      <input type="password" placeholder="Your password..." class="w-full mb-4 py-4 px-6 rounded-xl"></input>
+      <button class="py-4 px-6 bg-teal-700 text-white rounded-xl">Submit</button>
+    </form>
+    
+  </div>
+</div>
+
 </template>
   
