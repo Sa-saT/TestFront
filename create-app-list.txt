@@ -9,5 +9,8 @@ DONE Create a frontpage
 https://heroicons.com/
 DONE Create a brouse page
 DONE Create a detail page
-Create a log in page
-Create a sign up page
+DONE Create a log in page
+DONE Create a sign up page
+DONE Create a creating job
+DONE a job position should be a component
+DONE Implement state management for users

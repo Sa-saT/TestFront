@@ -10,13 +10,19 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-        apiBase: 'http://localhost:8000',
+      apiBase: 'http://localhost:8000',
     },
-},
+  },
   modules: [
     '@pinia/nuxt',
-], 
-// ページディレクトリ有効化
-// pages: true,
+  ],
+  // pinia: {
+  //   autoImports: [
+  //     "defineStore",
+  //     "storeToRefs"
+  //   ],
+  // }
+  // ページディレクトリ有効化
+  // pages: true,
 
 })
