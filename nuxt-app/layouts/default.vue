@@ -20,6 +20,7 @@ const userStore = useUserStore()
         <template v-if="userStore.user.isAuthenticated">
           <NuxtLink to="/myjobs" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">My Jobs</NuxtLink>
           <NuxtLink to="/createjob" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">Create Job</NuxtLink>
+          <NuxtLink to="/" class="py-4 px-6 bg-rose-900 hover:bg-teal-700 text-white rounded-xl">Log Out</NuxtLink>
         </template>
 
         <template v-else>

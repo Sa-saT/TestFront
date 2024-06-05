@@ -14,3 +14,5 @@ DONE Create a sign up page
 DONE Create a creating job
 DONE a job position should be a component
 DONE Implement state management for users
+
+add setting email

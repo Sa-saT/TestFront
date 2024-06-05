@@ -1,3 +1,7 @@
+<script setup>
+const { data: job } = useFetch('http://localhost:8000/api/v1/jobs/newest/')
+
+</script>
 <template>
 	<div>
 		<div class="py-20 px-6 bg-teal-700 text-center">
