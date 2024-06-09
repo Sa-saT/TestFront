@@ -15,7 +15,8 @@ DONE Create a creating job
 DONE a job position should be a component
 DONE Implement state management for users
 DONE Make front page dynamic
-Make detail dynamic(Separate serializer whith more data)
+DONE Make detail dynamic(Separate serializer whith more data)
 Make browse dynamic
+DONE add setting email
 
-add setting email
+**Nuxt3 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'title')
