@@ -17,6 +17,7 @@ const userStore = useUserStore()
     <footer class="p-6 flex flex-warp items-center justify-between bg-gray-800">
       <p class="text-gray-300">Copyright (c) 2023 - Djob</p>
       <div class="flex mt-6 md:mt-0 items-center space-x-4">
+        
         <template v-if="userStore.user.isAuthenticated">
           <NuxtLink to="/myjobs" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">My Jobs</NuxtLink>
           <NuxtLink to="/createjob" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">Create Job</NuxtLink>

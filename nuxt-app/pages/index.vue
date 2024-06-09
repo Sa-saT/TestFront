@@ -1,5 +1,5 @@
 <script setup>
-const { data: job } = useFetch('http://localhost:8000/api/v1/jobs/newest/')
+	const { data: jobs } = await useFetch('http://127.0.0.1:8000/api/v1/jobs/newest/')
 
 </script>
 <template>
@@ -13,8 +13,11 @@ const { data: job } = useFetch('http://localhost:8000/api/v1/jobs/newest/')
 
 			<div class="space-y-4">
 			
-				<Job />
-				
+				<Job
+					v-for="job in jobs"
+					v-bind:key="job.id"
+					v-bind:job="job" 
+				/>
 			</div>
 		</div>
 	</div>
