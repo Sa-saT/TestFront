@@ -2,18 +2,20 @@
 <script setup>
 const props = defineProps({
     my: {
-        type: [Boolean]
+        type: Boolean,
+        default: false,
     },
     job: {
-        type: [Object]
+        type: Object,
+        required: true,
     },
 })
 </script>
 <template>
     <div class="p-6 flex items-center justify-between bg-gray-100 rounded-xl">
         <div>
-            <p class="mb-2 text-xl font-semibold">{{ job.title }}</p>
-            <p class="text-gray-600">{{ job.company_name }}</p>
+            <h3 class="mb-2 text-xl font-semibold">{{ job.title || 'Unknown Title' }}</h3>
+            <p class="text-gray-600">{{ job.company_name || 'Unknown Company' }}</p>
         </div>
         <div>
             <p class="mb-2">{{ job.position_location }}</p>

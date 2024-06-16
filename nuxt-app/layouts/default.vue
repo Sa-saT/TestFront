@@ -2,18 +2,24 @@
 import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
+
+function logout() {
+    userStore.removeToken()
+}
 </script>
 
 <template>
   <div>
     <nav class="p-6 flex items-center justify-between bg-teal-800">
       <NuxtLink to="/" class="text-xl text-white">Djob</NuxtLink>
+      
       <div class="flex items-center space-x-4">
-        <NuxtLink to="/" class="text-white hover:text-teal-300">Home</NuxtLink>
-        <NuxtLink to="/browse" class="text-white hover:text-teal-300">Browse</NuxtLink>
-      </div>
+    <NuxtLink to="/" class="text-white hover:text-teal-300">Home</NuxtLink>
+    <NuxtLink to="/browse" class="text-white hover:text-teal-300">Browse</NuxtLink>
+  </div>
     </nav>
     <slot />
+
     <footer class="p-6 flex flex-warp items-center justify-between bg-gray-800">
       <p class="text-gray-300">Copyright (c) 2023 - Djob</p>
       <div class="flex mt-6 md:mt-0 items-center space-x-4">
@@ -21,7 +27,7 @@ const userStore = useUserStore()
         <template v-if="userStore.user.isAuthenticated">
           <NuxtLink to="/myjobs" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">My Jobs</NuxtLink>
           <NuxtLink to="/createjob" class="py-4 px-6 bg-teal-900 hover:bg-teal-700 text-white rounded-xl">Create Job</NuxtLink>
-          <NuxtLink to="/" class="py-4 px-6 bg-rose-900 hover:bg-teal-700 text-white rounded-xl">Log Out</NuxtLink>
+          <a href="#" @click.prevent="logout" class="py-4 px-6 bg-rose-600 hover:bg-rose-700 text-white rounded-xl cursor-pointer">Log out</a>
         </template>
 
         <template v-else>

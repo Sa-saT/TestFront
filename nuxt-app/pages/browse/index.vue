@@ -1,7 +1,7 @@
 <script setup>
 // Categories
 
-let { data: jobCategories } = await useFetch('http://127.0.0.1:8000/api/v1/jobs/categories/')
+let {data: jobCategories, error: categoriesError} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/categories')
 let selectedCategoriesRef = ref('')
 let selectedCategories = []
 
@@ -20,11 +20,14 @@ function toggleCategory(id) {
 	selectedCategoriesRef.value = selectedCategories.join(',')
 }
 
-let {data: jobs} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/')
+let {data: jobs, error: jobsError} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/')
 </script>
 
 <template>
-    <div class="grid md:grid-cols-4 gap-3 py-10 px-6">
+    <div v-if="categoriesError || jobsError" class="error-message">
+        <p>Error loading data. Please try again later.</p>
+    </div>
+    <div v-else class="grid md:grid-cols-4 gap-3 py-10 px-6">
         <div class="md:col-span-1 px-6 py-6 bg-teal-700 rounded-xl">
             <div class="flex space-x-4">
                 <input type="search" placeholder="Find a job..." class="w-full px-6 py-4 rounded-xl">
@@ -41,10 +44,10 @@ let {data: jobs} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/')
             <div class="mt-6 space-y-4">
                 <p
 					v-for="category in jobCategories"
-					v-bind:key="category.id"
-					v-on:click="toggleCategory(category.id)"
-					class="py-4 px-6 text-white rounded-xl"
-					v-bind:class="{'bg-teal-900': selectedCategoriesRef.includes(category.id)}"
+                    v-bind:key="category.id"
+                    v-on:click="toggleCategory(category.id)"
+                    class="py-4 px-6 text-white rounded-xl"
+                    v-bind:class="{'bg-teal-900': selectedCategoriesRef.includes(category.id)}"
 				>
 					{{ category.title }}
 				</p>

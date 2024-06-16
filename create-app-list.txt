@@ -20,3 +20,17 @@ Make browse dynamic
 DONE add setting email
 
 **Nuxt3 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'title')
+
+"""
+ ERROR  [nuxt] [request error] [unhandled] [500] Cannot read properties of undefined (reading 'getSSRProps')
+  at Module.ssrGetDirectiveProps (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:473:40)
+  at ./pages/browse/index.vue:88:32
+  at Module.ssrRenderList (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:438:7)
+  at _sfc_ssrRender (./pages/browse/index.vue:85:27)
+  at renderComponentSubTree (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:693:9)
+  at ./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:635:25
+  at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+  at async unrollBuffer$1 (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:879:16)
+  at async unrollBuffer$1 (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:884:16)
+  at async unrollBuffer$1 (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:884:16)
+"""

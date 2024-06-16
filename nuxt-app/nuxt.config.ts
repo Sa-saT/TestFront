@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  plugins: [
+    '~/plugins/useIFetch.ts',
+  ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   postcss: {

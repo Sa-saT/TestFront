@@ -11,9 +11,9 @@ useState<Map<number, Member>>(
 )
 </script> -->
 <template>
-  <dev>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
-  </dev>
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
