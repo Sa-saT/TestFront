@@ -1,5 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // hooks: {
+  //   'pages:extend' (pages) {
+  //     // add a route
+  //     pages.push({
+  //       name: 'browse',
+  //       path: '/browse',
+  //       file: '~/browse/index.vue'
+  //     })
+  //   }
+  // },
   plugins: [
     '~/plugins/useIFetch.ts',
   ],

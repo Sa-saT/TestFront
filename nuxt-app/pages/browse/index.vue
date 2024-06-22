@@ -1,7 +1,16 @@
 <script setup>
+// Query
+
+let queryRef = ref('')
+let query = ''
+
+function performSearch() {
+    queryRef.value = query
+}
+
 // Categories
 
-let {data: jobCategories, error: categoriesError} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/categories')
+let {data: jobCategories, error: categoriesError} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/categories/')
 let selectedCategoriesRef = ref('')
 let selectedCategories = []
 
@@ -20,7 +29,9 @@ function toggleCategory(id) {
 	selectedCategoriesRef.value = selectedCategories.join(',')
 }
 
-let {data: jobs, error: jobsError} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/')
+let {data: jobs, error: jobsError} = await useFetch('http://127.0.0.1:8000/api/v1/jobs/', {
+    query: { query: queryRef, categories: selectedCategoriesRef }
+})
 </script>
 
 <template>
@@ -32,7 +43,10 @@ let {data: jobs, error: jobsError} = await useFetch('http://127.0.0.1:8000/api/v
             <div class="flex space-x-4">
                 <input type="search" placeholder="Find a job..." class="w-full px-6 py-4 rounded-xl">
 
-                <button class="px-6 py-4 bg-teal-900 text-white rounded-xl">
+                <button
+                    class="px-6 py-4 bg-teal-900 text-white rounded-xl"
+                    v-on:click="performSearch"
+                >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                     </svg>

@@ -34,3 +34,5 @@ DONE add setting email
   at async unrollBuffer$1 (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:884:16)
   at async unrollBuffer$1 (./node_modules/.pnpm/@vue+server-renderer@3.4.29_vue@3.4.29/node_modules/@vue/server-renderer/dist/server-renderer.cjs.js:884:16)
 """
+
+@click='/'></a>

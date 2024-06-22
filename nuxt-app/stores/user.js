@@ -4,14 +4,14 @@ export const useUserStore = defineStore({
     id: 'user',
     state: () => ({
         user: {
-            isAuthenticated: false,
+            isAuthenticated: true,
             email: null,
             token: null,
         }
     }),
     action: {
         initStore() {
-            this.user.isAuthenticated = false
+            this.user.isAuthenticated = true
 
             if (localStorage.getItem('user.token')){
                 this.user.token = localStorage.getItem('user.token')

@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@opentelemetry/api": "1.8.0",
     "@pinia/nuxt": "^0.5.1",
     "defu": "^6.1.4",
     "nuxt": "^3.12.2",
@@ -19,5 +20,9 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.4"
+  },
+  "resolutions": {
+    "@vue/server-renderer": "3.4.29",
+    "@opentelemetry/api": "1.8.0"
   }
 }
