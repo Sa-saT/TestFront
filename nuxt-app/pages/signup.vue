@@ -1,5 +1,7 @@
 <script setup>
-const router = useRouter
+
+const router = useRouter()
+
 let email = ref('')
 let password1 = ref('')
 let password2 = ref('')
@@ -14,7 +16,7 @@ async function submitForm(){
         method: 'POST',
         body: {
             username: email.value,
-            password: password1.value,
+            password: password1.value
         }
     }).then(response => {
         console.log('response', response)
