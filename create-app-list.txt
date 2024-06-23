@@ -16,8 +16,20 @@ DONE a job position should be a component
 DONE Implement state management for users
 DONE Make front page dynamic
 DONE Make detail dynamic(Separate serializer whith more data)
-Make browse dynamic
+DONE Make browse dynamic
 DONE add setting email
+DONE Make it possible to sign up
+Make it possible to log in
+Make it possible to log out
+Initialize the user store after refresh
+Show your jobs
+Make it possible to 
+Make it possible to 
+Make it possible to 
+Implement meta data on pages
+Summary
+
+
 
 **Nuxt3 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'title')
 
