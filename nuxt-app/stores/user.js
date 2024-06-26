@@ -6,9 +6,10 @@ export const useUserStore = defineStore({
         user: {
             isAuthenticated: false,
             email: null,
-            token: null,
+            token: null
         }
     }),
+
     action: {
         initStore() {
             this.user.isAuthenticated = false

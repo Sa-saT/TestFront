@@ -30,7 +30,7 @@ async function submitForm(){
     .catch(error => {
         if (error.response){
             for (const property in error.response._data){
-                errors.value.push(`${property}: ${error.response._data[property]}`)
+              errors.value.push(`${property}: ${error.response._data[property]}`)
             }
             console.log(JSON.stringify(error.response))
         } else if (error.message) {
@@ -67,29 +67,28 @@ async function submitForm(){
   </tbody>
 </table> -->
 
-<div class="py-10 px-6">
-  <div class="max-w-sm mx-auto py-10 px-6 bg-gray-100 rounded-xl">
-    <h1 class="mb-6 text-2xl">Log in</h1>
-    <form v-on:submit.prevent="submitForm">
-      <input v-model="email" type="email" placeholder="Your email address..." class="w-full mb-4 py-4 px-6 rounded-xl"></input>
-      <input v-model="password" type="password" placeholder="Your password..." class="w-full mb-4 py-4 px-6 rounded-xl"></input>
+  <div class="py-10 px-6">
+    <div class="max-w-sm mx-auto py-10 px-6 bg-gray-100 rounded-xl">
+      <h1 class="mb-6 text-2xl">Log in</h1>
+      <form v-on:submit.prevent="submitForm">
+        <input v-model="email" type="email" placeholder="Your email address..." class="w-full mb-4 py-4 px-6 rounded-xl"></input>
+        <input v-model="password" type="password" placeholder="Your password..." class="w-full mb-4 py-4 px-6 rounded-xl"></input>
+        
+        <div
+          v-if="errors.length"
+          class="mb-6 py-4 px-6 bg-rose-400 text-white rounded-xl"
+        >
+          <p
+              v-for="error in errors"
+              v-bind:key="error">
+              {{ error }}
+          </p>
+        </div>
+        
+        <button class="py-4 px-6 bg-teal-700 text-white rounded-xl">Submit</button>
+      </form>
       
-      <div
-                    v-if="errors.length"
-                    class="mb-6 py-4 px-6 bg-rose-400 text-white rounded-xl"
-                >
-                    <p
-                        v-for="error in errors"
-                        v-bind:key="error">
-                        {{ error }}
-                    </p>
-                </div>
-      
-      <button class="py-4 px-6 bg-teal-700 text-white rounded-xl">Submit</button>
-    </form>
-    
+    </div>
   </div>
-</div>
 
 </template>
-  
