@@ -10,7 +10,7 @@ export const useUserStore = defineStore({
         }
     }),
 
-    action: {
+    actions: {
         initStore() {
             this.user.isAuthenticated = false
 
