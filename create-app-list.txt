@@ -22,10 +22,10 @@ DONE Make it possible to sign up
 DONE Make it possible to log in
 DONE Make it possible to log out
 DONE Initialize the user store after refresh
-Show your jobs
-Make it possible to 
-Make it possible to 
-Make it possible to 
+DONE Show your jobs
+Make it possible to create a job
+Make it possible to delete job
+Make it possible to edit a job
 Implement meta data on pages
 Summary
 
