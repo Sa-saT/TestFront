@@ -19,9 +19,9 @@ DONE Make detail dynamic(Separate serializer whith more data)
 DONE Make browse dynamic
 DONE add setting email
 DONE Make it possible to sign up
-Make it possible to log in
-Make it possible to log out
-Initialize the user store after refresh
+DONE Make it possible to log in
+DONE Make it possible to log out
+DONE Initialize the user store after refresh
 Show your jobs
 Make it possible to 
 Make it possible to 
