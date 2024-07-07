@@ -23,9 +23,9 @@ DONE Make it possible to log in
 DONE Make it possible to log out
 DONE Initialize the user store after refresh
 DONE Show your jobs
-Make it possible to create a job
-Make it possible to delete job
-Make it possible to edit a job
+DONE Make it possible to create a job
+DONE Make it possible to delete job
+DONE Make it possible to edit a job
 Implement meta data on pages
 Summary
 

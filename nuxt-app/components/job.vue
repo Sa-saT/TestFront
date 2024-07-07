@@ -1,5 +1,10 @@
 
 <script setup>
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
+const emit = defineEmits(['deleteJob'])
+
 const props = defineProps({
     my: {
         type: Boolean,
@@ -10,6 +15,24 @@ const props = defineProps({
         required: true,
     },
 })
+
+async function deleteJob(id){
+    await $fetch('http://127.0.0.1:8000/api/v1/jobs/' + id + '/delete/',{
+        method: 'DELETE',
+        headers:{
+        'Authorization': 'token ' + userStore.user.token,
+        'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        console.log('response', response)
+
+        emit('deleteJob', id)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
 </script>
 <template>
     <div class="p-6 flex items-center justify-between bg-gray-100 rounded-xl">
@@ -27,8 +50,8 @@ const props = defineProps({
 
         <div class="space-x-2">
             <NuxtLink v-bind:to="'/browse/' + job.id" class="py-4 px-6 bg-teal-700 text-white rounded-xl">Details</NuxtLink>
-            <NuxtLink to="/browse/1" class="py-4 px-6 bg-cyan-700 text-white rounded-xl" v-if="my">Edit</NuxtLink>
-            <NuxtLink to="/browse/1" class="py-4 px-6 bg-rose-700 text-white rounded-xl" v-if="my">Delete</NuxtLink>
+            <NuxtLink v-bind:to="'/editjob/' + job.id" class="py-4 px-6 bg-cyan-700 text-white rounded-xl" v-if="my">Edit</NuxtLink>
+            <a @click="deleteJob(job.id)" class="py-4 px-6 bg-rose-700 text-white rounded-xl" v-if="my">Delete</a>
         </div>
     </div>
 </template>

@@ -27,6 +27,12 @@ async function getJobs(){
         console.log('error', error)
     })
 }
+
+function deleteJob(id){
+    console.log('id', id)
+
+    jobs.value = jobs.value.filter(job => job.id !== id)
+}
 </script>
 
 <template>
@@ -39,6 +45,7 @@ async function getJobs(){
                     :key="job.id"
                     :job="job"
                     :my="true"
+                    v-on:deleteJob="deleteJob(job.id)"
                 />	
 			</div>
         </div>
