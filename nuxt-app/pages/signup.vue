@@ -12,6 +12,11 @@ async function submitForm(){
 
     errors.value = []
     
+    // if (password1.value !== password2.value) {
+    //     errors.value.push('Passwords do not match')
+    //     return
+    // }
+
     await $fetch('http://127.0.0.1:8000/api/v1/users/',{
         method: 'POST',
         body: {
