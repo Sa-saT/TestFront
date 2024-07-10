@@ -1,23 +1,25 @@
-<script setup>
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 
 const router = useRouter()
 
-let email = ref('')
-let password1 = ref('')
-let password2 = ref('')
-let errors = ref([])
+const email = ref<string>('')
+const password1 = ref<string>('')
+const password2 = ref<string>('')
+const errors = ref<string[]>([])
 
-async function submitForm(){
+async function submitForm(): Promise<void> {
     console.log('submitForm')
 
     errors.value = []
-    
-    // if (password1.value !== password2.value) {
-    //     errors.value.push('Passwords do not match')
-    //     return
-    // }
 
-    await $fetch('http://127.0.0.1:8000/api/v1/users/',{
+    if (password1.value !== password2.value) {
+        errors.value.push('Passwords do not match')
+        return
+    }
+    
+    await $fetch('http://127.0.0.1:8000/api/v1/users/', {
         method: 'POST',
         body: {
             username: email.value,
@@ -25,18 +27,15 @@ async function submitForm(){
         }
     }).then(response => {
         console.log('response', response)
-
-        router.push({path: '/login'})
-    })
-    .catch(error => {
-        if (error.response){
-            for (const property in error.response._data){
+        router.push({ path: '/login' })
+    }).catch(error => {
+        if (error.response) {
+            for (const property in error.response._data) {
                 errors.value.push(`${property}: ${error.response._data[property]}`)
             }
             console.log(JSON.stringify(error.response))
-        } else if (error.message) {
+        } else {
             errors.value.push('Something went wrong. Please try again')
-
             console.log(JSON.stringify(error))
         }
     })

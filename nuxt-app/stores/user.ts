@@ -1,8 +1,16 @@
 import { defineStore } from 'pinia'
 
+interface UserState {
+    user: {
+        isAuthenticated: boolean,
+        email: string | null,
+        token: string | null
+    }
+}
+
 export const useUserStore = defineStore({
     id: 'user',
-    state: () => ({
+    state: (): UserState => ({
         user: {
             isAuthenticated: false,
             email: null,
@@ -14,15 +22,15 @@ export const useUserStore = defineStore({
         initStore() {
             this.user.isAuthenticated = false
 
-            if (localStorage.getItem('user.token')){
+            if (localStorage.getItem('user.token')) {
                 this.user.token = localStorage.getItem('user.token')
                 this.user.email = localStorage.getItem('user.email')
                 this.user.isAuthenticated = true
 
-                console.log('Initalized user:', this.user)
+                console.log('Initialized user:', this.user)
             }
         },
-        setToken(token, email){
+        setToken(token: string, email: string) {
             console.log('setToken', token, email)
 
             this.user.token = token
@@ -32,7 +40,7 @@ export const useUserStore = defineStore({
             localStorage.setItem('user.token', token)
             localStorage.setItem('user.email', email)
         },
-        removeToken(){
+        removeToken() {
             console.log('removeToken')
 
             this.user.token = null
