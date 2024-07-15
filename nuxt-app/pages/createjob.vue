@@ -69,6 +69,12 @@ async function submitForm(): Promise<void> {
                 company_email: company_email.value
             }
         }).then(response => {
+            // throw createError('test_error')
+            // throw showError({
+            //     statusCode: 400,
+            //     statusMessage: 'Bad Request',
+            //     message: 'エラー発生',
+            // });
             console.log('response', response)
             router.push({ path: '/myjobs' })
         }).catch(error => {
